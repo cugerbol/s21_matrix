@@ -1,6 +1,13 @@
 #test s21_create_matrix_test_1
 matrix_t A;
-int rows = 2;
-int columns = 2;
-int res = s21_create_matrix(rows, columns, &A);
+int res = s21_create_matrix(2, 2, &A);
 ck_assert_int_eq(res, 0);
+
+#test s21_create_matrix_test_2
+matrix_t A;
+int res = s21_create_matrix(0, 2, &A);
+ck_assert_int_eq(res, 1);
+
+#test s21_create_matrix_test_3
+int res = s21_create_matrix(3, 3, NULL);
+ck_assert_int_eq(res, 1);

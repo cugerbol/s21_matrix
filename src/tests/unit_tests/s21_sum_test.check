@@ -1,6 +1,0 @@
-#test s21_sum_matrux_test_1
-matrix_t A;
-int rows = 2;
-int columns = 2;
-int res = s21_create_matrix(rows, columns, &A);
-ck_assert_int_eq(res, 0);

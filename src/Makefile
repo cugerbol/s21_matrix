@@ -16,7 +16,7 @@ endif
 
 all: test
 
-create_tests:
+create_tests: clang
 	checkmk clean_mode=1 $(TEST_PATH)*.check >$(TEST_PATH)tests.c 
  
 clean:
@@ -55,6 +55,8 @@ clang:
 	clang-format -i ./tests/unit_tests/*
 	clang-format -n ./modules/*.c
 	clang-format -n ./tests/unit_tests/*
+	clang-format -i  *.h
+	clang-format -n  *.h
 
 # gcov_report: s21_matrix.a test
 # 	$(CC) $(TEST_FLAGS) modules/s21*.c tests/tests.c s21_matrix.a $(CHECK_FLAGS) $(GCOVFLAGS)

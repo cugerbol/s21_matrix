@@ -7,16 +7,18 @@
 #define INCORRECT_MATRIX 1
 #define CALCULATION_ERROR 2
 
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 typedef struct matrix_struct {
-double **matrix;
+  double **matrix;
   int rows;
   int columns;
 } matrix_t;
 
 // targeted
 int s21_create_matrix(int rows, int columns, matrix_t *result);
+void s21_remove_matrix(matrix_t *A);
 
 #endif
