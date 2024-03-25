@@ -6,6 +6,7 @@
 #define OK 0
 #define INCORRECT_MATRIX 1
 #define CALCULATION_ERROR 2
+#define EPS 1e-6
 
 #include <math.h>
 #include <stdio.h>
@@ -25,6 +26,7 @@ int s21_sum_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
 int s21_mult_number(matrix_t *A, double number, matrix_t *result);
 int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);
+int s21_transpose(matrix_t *A, matrix_t *result);
 
 // secondary
 int matrix_is_correct(matrix_t *matrix);
