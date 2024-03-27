@@ -43,6 +43,8 @@ gcov_report: test
 test: s21_matrix.a
 	$(CC) $(TEST_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(MODULES_PATH)*.c $(CHECK_FLAGS) $(GCOVFLAGS)
 	./a.out
+	rm -rf *.gcno
+	rm -rf *.gcda
 	
 s21_matrix.a: s21_matrix.o
 	ar rcs $(NAME).a *.o
