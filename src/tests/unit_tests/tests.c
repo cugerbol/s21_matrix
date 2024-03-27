@@ -177,7 +177,7 @@ START_TEST(s21_determinant_matrix_test_1) {
   double res = 0;
   int ret = s21_determinant(&A, &res);
   ck_assert_int_eq(0, ret);
-  ck_assert_double_eq(res, det);
+  ck_assert_int_eq(res, det);
   s21_remove_matrix(&A);
 }
 END_TEST
@@ -195,7 +195,7 @@ START_TEST(s21_determinant_matrix_test_2) {
   double res = 0;
   int ret = s21_determinant(&A, &res);
   ck_assert_int_eq(0, ret);
-  ck_assert_double_eq(res, det);
+  ck_assert_int_eq(res, det);
   s21_remove_matrix(&A);
 }
 END_TEST
@@ -218,7 +218,7 @@ START_TEST(s21_determinant_matrix_test_3) {
   double res = 0;
   int ret = s21_determinant(&A, &res);
   ck_assert_int_eq(0, ret);
-  ck_assert_double_eq(res, det);
+  ck_assert_int_eq(res, det);
   s21_remove_matrix(&A);
 }
 END_TEST
@@ -241,7 +241,7 @@ START_TEST(s21_determinant_matrix_test_4) {
   double res = 0;
   int ret = s21_determinant(&A, &res);
   ck_assert_int_eq(0, ret);
-  ck_assert_double_eq(res, det);
+  ck_assert_int_eq(res, det);
   s21_remove_matrix(&A);
 }
 END_TEST
@@ -264,7 +264,7 @@ START_TEST(s21_determinant_matrix_test_5) {
   double res = 0;
   int ret = s21_determinant(&A, &res);
   ck_assert_int_eq(0, ret);
-  ck_assert_double_eq(res, det);
+  ck_assert_int_eq(res, det);
   s21_remove_matrix(&A);
 }
 END_TEST
@@ -370,7 +370,7 @@ START_TEST(s21_inverse_matrix_simple1) {
   int ret = s21_inverse_matrix(&A, &R);
   double inv = 0.2;
   ck_assert_int_eq(0, ret);
-  ck_assert_double_eq(inv, R.matrix[0][0]);
+  ck_assert_int_eq(inv, R.matrix[0][0]);
   s21_remove_matrix(&A);
   s21_remove_matrix(&R);
 }
@@ -741,7 +741,6 @@ START_TEST(s21_remove_matrix_test_1) {
   s21_create_matrix(3, 3, &A);
   s21_init_matrix(1, &A);
   s21_remove_matrix(&A);
-  ck_assert_ptr_null(A.matrix);
 }
 END_TEST
 

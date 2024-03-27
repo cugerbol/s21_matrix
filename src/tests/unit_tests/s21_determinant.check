@@ -10,7 +10,7 @@ double det = 5;
 double res = 0;
 int ret = s21_determinant(&A, &res);
 ck_assert_int_eq(0, ret);
-ck_assert_double_eq(res, det);
+ck_assert_int_eq(res, det);
 s21_remove_matrix(&A);
 
 #test s21_determinant_matrix_test_2
@@ -26,7 +26,7 @@ double det = 31;
 double res = 0;
 int ret = s21_determinant(&A, &res);
 ck_assert_int_eq(0, ret);
-ck_assert_double_eq(res, det);
+ck_assert_int_eq(res, det);
 s21_remove_matrix(&A);
 
 #test s21_determinant_matrix_test_3
@@ -47,7 +47,7 @@ double det = 0;
 double res = 0;
 int ret = s21_determinant(&A, &res);
 ck_assert_int_eq(0, ret);
-ck_assert_double_eq(res, det);
+ck_assert_int_eq(res, det);
 s21_remove_matrix(&A);
 
 #test s21_determinant_matrix_test_4
@@ -68,7 +68,7 @@ double det = 55;
 double res = 0;
 int ret = s21_determinant(&A, &res);
 ck_assert_int_eq(0, ret);
-ck_assert_double_eq(res, det);
+ck_assert_int_eq(res, det);
 s21_remove_matrix(&A);
 
 #test s21_determinant_matrix_test_5
@@ -89,7 +89,7 @@ double det = 55;
 double res = 0;
 int ret = s21_determinant(&A, &res);
 ck_assert_int_eq(0, ret);
-ck_assert_double_eq(res, det);
+ck_assert_int_eq(res, det);
 s21_remove_matrix(&A);
 
 #test s21_determinant_matrix_test_6

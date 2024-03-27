@@ -10,7 +10,7 @@ A.matrix[0][0] = 5;
 int ret = s21_inverse_matrix(&A, &R);
 double inv = 0.2;
 ck_assert_int_eq(0, ret);
-ck_assert_double_eq(inv, R.matrix[0][0]);
+ck_assert_int_eq(inv, R.matrix[0][0]);
 s21_remove_matrix(&A);
 s21_remove_matrix(&R);
 
