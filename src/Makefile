@@ -1,6 +1,6 @@
 NAME = s21_matrix
 CC = gcc
-CC_FLAGS = -std=c11 #-Wall -Werror -Wextra
+CC_FLAGS = -std=c11 -Wall -Werror -Wextra
 TEST_PATH = ./tests/unit_tests/
 MODULES_PATH = ./modules/*
 GCOVFLAGS =  -L. $(NAME).a --coverage
@@ -58,26 +58,12 @@ clang:
 	clang-format -i  *.h
 	clang-format -n  *.h
 
-# gcov_report: s21_matrix.a test
-# 	$(CC) $(TEST_FLAGS) modules/s21*.c tests/tests.c s21_matrix.a $(CHECK_FLAGS) $(GCOVFLAGS)
-# 	./a.out
-# 	lcov -t a.out -o rep.info -c -d .
-# 	genhtml rep.info --output-directory report
-# 	genhtml -o report rep.info --include src/*
-# 	open ./report/index.html
-# 	rm -rf *.gcda *.gcno s21_tests s21_tests.info
-# 	rm -f a.out rm -f s21_matrix.a rep.info
+check:
+	leaks -atExit -- ./a.out
 
 
-# check:
-# #	leaks -atExit -- ./a.out
 
-# clang:
-# 	clang-format -i modules/*
-# 	clang-format -i tests/*
 
-# run: test check
-# 	rm  a.out
 
 
 	
