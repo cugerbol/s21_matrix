@@ -1,6 +1,7 @@
 NAME = s21_matrix
 CC = gcc
 CC_FLAGS = -std=c11 -Wall -Werror -Wextra
+TEST_FLAGS = -std=c11 -g `pkg-config --cflags --libs check`
 TEST_PATH = ./tests/unit_tests/
 MODULES_PATH = ./modules/*
 GCOVFLAGS =  -L. $(NAME).a --coverage
@@ -24,10 +25,12 @@ clean:
 	rm -rf report
 	rm -rf *.gcno
 	rm -rf *.gcda
+	rm -rf *.info
+	rm -rf a.out*
 	clear
 
 gcov_report: test
-	$(CC) $(CC_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(MODULES_PATH)*.c $(CHECK_FLAGS) $(GCOVFLAGS)
+	$(CC) $(TEST_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(MODULES_PATH)*.c $(CHECK_FLAGS) $(GCOVFLAGS)
 	./a.out
 	lcov -t a.out -o rep.info -c -d .
 	genhtml rep.info --output-directory report
@@ -38,7 +41,7 @@ gcov_report: test
 
 
 test: s21_matrix.a
-	$(CC) $(CC_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(MODULES_PATH)*.c $(CHECK_FLAGS) $(GCOVFLAGS)
+	$(CC) $(TEST_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(MODULES_PATH)*.c $(CHECK_FLAGS) $(GCOVFLAGS)
 	./a.out
 	
 s21_matrix.a: s21_matrix.o
