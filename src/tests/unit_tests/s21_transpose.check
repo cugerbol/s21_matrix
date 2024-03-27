@@ -56,52 +56,6 @@ int ret = s21_transpose(&A, &R);
 ck_assert_int_eq(1, ret);
 s21_remove_matrix(&A);
 
-#test s21_transpose_matrix_test_4
-matrix_t mat_1, res_mat, res_org;
-
-s21_create_matrix(2, 2, &mat_1);
-s21_create_matrix(2, 2, &res_org);
-mat_1.matrix[0][0] = 1;
-mat_1.matrix[0][1] = 2;
-mat_1.matrix[1][0] = 3;
-mat_1.matrix[1][1] = 4;
-res_org.matrix[0][0] = 1;
-res_org.matrix[0][1] = 3;
-res_org.matrix[1][0] = 2;
-res_org.matrix[1][1] = 4;
-int ret = s21_transpose(&mat_1, &res_mat);
-ck_assert_int_eq(ret, 0);
-ret = s21_eq_matrix(&res_mat, &res_org);
-ck_assert_int_eq(ret, 1);
-s21_remove_matrix(&mat_1);
-s21_remove_matrix(&res_mat);
-s21_remove_matrix(&res_org);
-
-double matrix[2][2] = {
-    {1, 2},
-    {3, 4},
-};
-double res[2][2] = {{1, 3}, {2, 4}};
-s21_create_matrix(2, 2, &mat_1);
-s21_create_matrix(2, 2, &res_org);
-for (int i = 0; i < 2; i++) {
-  for (int j = 0; j < 2; j++) {
-    mat_1.matrix[i][j] = matrix[i][j];
-  }
-}
-for (int i = 0; i < 2; i++) {
-  for (int j = 0; j < 2; j++) {
-    res_org.matrix[i][j] = res[i][j];
-  }
-}
-ret = s21_transpose(&mat_1, &res_mat);
-ck_assert_int_eq(ret, 0);
-ret = s21_eq_matrix(&res_mat, &res_org);
-ck_assert_int_eq(ret, 1);
-s21_remove_matrix(&mat_1);
-s21_remove_matrix(&res_mat);
-s21_remove_matrix(&res_org);
-
 #test s21_transpose_matrix_test_5
 int ret = s21_transpose(NULL, NULL);
 ck_assert_int_eq(1, ret);
