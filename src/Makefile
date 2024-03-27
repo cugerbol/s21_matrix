@@ -14,7 +14,7 @@ else
 	OPEN_CMD = xdg-open
 endif
 
-all: clean test gcov_report
+all: s21_matrix.a
 
 create_tests: clang
 	checkmk clean_mode=1 $(TEST_PATH)*.check >$(TEST_PATH)tests.c 
@@ -22,6 +22,8 @@ create_tests: clang
 clean:
 	rm -f ./a.out *.o *.a
 	rm -rf report
+	rm -rf *.gcno
+	rm -rf *.gcda
 	clear
 
 gcov_report: test
@@ -36,7 +38,7 @@ gcov_report: test
 
 
 test: s21_matrix.a
-	$(CC) $(CC_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(CHECK_FLAGS)
+	$(CC) $(CC_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(MODULES_PATH)*.c $(CHECK_FLAGS) $(GCOVFLAGS)
 	./a.out
 	
 s21_matrix.a: s21_matrix.o

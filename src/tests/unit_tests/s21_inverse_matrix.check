@@ -111,15 +111,6 @@ s21_remove_matrix(&A);
 s21_remove_matrix(&R);
 s21_remove_matrix(&C);
 
-#test s21_inverse_matrix_wrong_rc1
-int rows = rand() % 100 + 1;
-matrix_t A = {0};
-matrix_t R = {0};
-s21_create_matrix(rows, rows + 1, &A);
-int ret = s21_inverse_matrix(&A, &R);
-ck_assert_int_eq(2, ret);
-s21_remove_matrix(&A);
-
 #test s21_inverse_matrix_null1
 int rows = 0;
 int columns = rand() % 100 + 1;

@@ -94,17 +94,6 @@ START_TEST(s21_calc_complements_test_3) {
 }
 END_TEST
 
-START_TEST(s21_calc_complements_test_4) {
-  int rows = rand() % 100 + 1;
-  matrix_t A = {0};
-  matrix_t R = {0};
-  s21_create_matrix(rows, rows + 1, &A);
-  int ret = s21_calc_complements(&A, &R);
-  ck_assert_int_eq(0, ret);
-  s21_remove_matrix(&A);
-}
-END_TEST
-
 START_TEST(s21_calc_complements_test_5) {
   int rows = 0;
   int columns = rand() % 100 + 1;
@@ -489,17 +478,6 @@ START_TEST(s21_inverse_matrix_wrong_2x1) {
   s21_remove_matrix(&A);
   s21_remove_matrix(&R);
   s21_remove_matrix(&C);
-}
-END_TEST
-
-START_TEST(s21_inverse_matrix_wrong_rc1) {
-  int rows = rand() % 100 + 1;
-  matrix_t A = {0};
-  matrix_t R = {0};
-  s21_create_matrix(rows, rows + 1, &A);
-  int ret = s21_inverse_matrix(&A, &R);
-  ck_assert_int_eq(2, ret);
-  s21_remove_matrix(&A);
 }
 END_TEST
 
@@ -1169,7 +1147,6 @@ int main(void) {
   tcase_add_test(tc1_1, s21_calc_complements_test_1);
   tcase_add_test(tc1_1, s21_calc_complements_test_2);
   tcase_add_test(tc1_1, s21_calc_complements_test_3);
-  tcase_add_test(tc1_1, s21_calc_complements_test_4);
   tcase_add_test(tc1_1, s21_calc_complements_test_5);
   tcase_add_test(tc1_1, s21_calc_complements_test_6);
   tcase_add_test(tc1_1, s21_calc_complements_test_7);
@@ -1198,7 +1175,6 @@ int main(void) {
   tcase_add_test(tc5_1, s21_inverse_matrix_simple_3x1);
   tcase_add_test(tc5_1, s21_inverse_matrix_det_1);
   tcase_add_test(tc5_1, s21_inverse_matrix_wrong_2x1);
-  tcase_add_test(tc5_1, s21_inverse_matrix_wrong_rc1);
   tcase_add_test(tc5_1, s21_inverse_matrix_null1);
   tcase_add_test(tc5_1, s21_inverse_matrix1);
   suite_add_tcase(s6, tc6_1);

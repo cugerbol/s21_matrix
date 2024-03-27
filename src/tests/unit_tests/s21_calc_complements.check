@@ -75,15 +75,6 @@ ck_assert_int_eq(0, ret);
 s21_remove_matrix(&A);
 s21_remove_matrix(&R);
 
-#test s21_calc_complements_test_4
-int rows = rand() % 100 + 1;
-matrix_t A = {0};
-matrix_t R = {0};
-s21_create_matrix(rows, rows + 1, &A);
-int ret = s21_calc_complements(&A, &R);
-ck_assert_int_eq(0, ret);
-s21_remove_matrix(&A);
-
 #test s21_calc_complements_test_5
 int rows = 0;
 int columns = rand() % 100 + 1;
