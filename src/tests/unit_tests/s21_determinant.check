@@ -105,7 +105,7 @@ double det = 5;
 double res = 0;
 int ret = s21_determinant(&A, &res);
 ck_assert_int_eq(0, ret);
-ck_assert_double_ne(res, det);
+ck_assert_uint_ne(res, det);
 s21_remove_matrix(&A);
 
 #test s21_determinant_matrix_test_7
