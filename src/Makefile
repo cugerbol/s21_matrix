@@ -14,14 +14,13 @@ else
 	OPEN_CMD = xdg-open
 endif
 
-all: test
+all:s21_matrix.a test gcov_report
 
 create_tests: clang
 	checkmk clean_mode=1 $(TEST_PATH)*.check >$(TEST_PATH)tests.c 
  
 clean:
 	rm -f ./a.out *.o *.a
-	rm -rf $(TEST_PATH)*.c
 	rm -rf report
 	clear
 
