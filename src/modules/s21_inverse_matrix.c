@@ -8,9 +8,9 @@ int s21_inverse_matrix(matrix_t *A, matrix_t *result) {
     double det = 0.;
     s21_determinant(A, &det);
     if (fabs(det - 0) < EPS) {
-      error = CALCULATION_ERROR;  // для матрицы, детерминант которой равен
-                                  // 0, вычисление обратной матриц невозможно
-    } else if (A->rows == 1) {  // для матрицы 1х1
+      error = CALCULATION_ERROR;
+
+    } else if (A->rows == 1) {
       s21_create_matrix(1, 1, result);
       result->matrix[0][0] = 1 / (A->matrix[0][0]);
     } else {
