@@ -1,3 +1,5 @@
+#suite s21_eq_matrix
+
 #test s21_eq_matrix_test_1
 matrix_t A;
 matrix_t B;

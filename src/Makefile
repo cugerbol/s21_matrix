@@ -14,7 +14,7 @@ else
 	OPEN_CMD = xdg-open
 endif
 
-all:s21_matrix.a test gcov_report
+all: clean test gcov_report
 
 create_tests: clang
 	checkmk clean_mode=1 $(TEST_PATH)*.check >$(TEST_PATH)tests.c 
@@ -35,7 +35,7 @@ gcov_report: test
 	rm -f a.out rm -f s21_matrix.a rep.info
 
 
-test: s21_matrix.a create_tests
+test: s21_matrix.a
 	$(CC) $(CC_FLAGS) $(NAME).a $(TEST_PATH)tests.c $(CHECK_FLAGS)
 	./a.out
 	
@@ -46,7 +46,6 @@ s21_matrix.a: s21_matrix.o
 
 s21_matrix.o: clean clang
 	$(CC) $(CC_FLAGS) -c modules/s21*.c
-
 
 clang:
 	cp ../materials/linters/.clang-format .

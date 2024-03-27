@@ -1,3 +1,5 @@
+#suite s21_inverse_matrix
+
 #test s21_inverse_matrix_simple1
 int rows = 1;
 int columns = 1;

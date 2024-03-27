@@ -1,3 +1,5 @@
+#suite s21_create_matrix
+
 #test s21_create_matrix_test_1
 matrix_t A;
 int res = s21_create_matrix(2, 2, &A);

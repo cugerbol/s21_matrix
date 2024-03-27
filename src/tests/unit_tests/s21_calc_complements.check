@@ -1,3 +1,5 @@
+#suite s21_calc_complements
+
 #test s21_calc_complements_test_1
 int rows = 2;
 int columns = 2;

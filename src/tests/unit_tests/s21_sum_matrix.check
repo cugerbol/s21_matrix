@@ -1,5 +1,6 @@
-#test s21_sum_matrix_test_1
+#suite s21_sum_matrix
 
+#test s21_sum_matrix_test_1
 int rows = rand() % 100 + 1;
 int columns = rand() % 100 + 1;
 matrix_t A = {0};

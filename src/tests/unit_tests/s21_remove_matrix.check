@@ -1,3 +1,5 @@
+#suite s21_remove_matrix
+
 #test s21_remove_matrix_test_1
 matrix_t A;
 s21_create_matrix(3, 3, &A);

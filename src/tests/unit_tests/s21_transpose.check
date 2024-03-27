@@ -1,3 +1,5 @@
+#suite s21_transpose_matrix
+
 #test s21_transpose_matrix_test_1
 int rows = rand() % 100 + 1;
 int columns = rand() % 100 + 1;
