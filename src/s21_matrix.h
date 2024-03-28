@@ -6,6 +6,7 @@
 #define OK 0
 #define INCORRECT_MATRIX 1
 #define CALCULATION_ERROR 2
+#define ERROR 1
 #define EPS 1e-6
 
 #include <math.h>
